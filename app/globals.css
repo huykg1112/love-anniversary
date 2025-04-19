@@ -40,7 +40,7 @@ h6 {
   height: 100%;
   pointer-events: none;
   z-index: 0;
-  background-image: url("/images/cherry-blossom.png");
+  background-image: url("/love-anniversary/images/cherry-blossom.png");
   background-repeat: repeat;
   animation: fall 15s linear infinite;
 }
@@ -53,12 +53,12 @@ h6 {
   height: 100%;
   pointer-events: none;
   z-index: 0;
-  background-image: url("/images/heart.png");
+  background-image: url("/love-anniversary/images/heart.png");
   background-repeat: repeat;
   animation: float 20s linear infinite;
 }
 .bg-header {
-  background-image: url("/bg/haeder.jpg");
+  background-image: url("/love-anniversary/bg/haeder.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

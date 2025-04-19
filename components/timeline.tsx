@@ -19,7 +19,7 @@ import { useEffect, useRef, useState } from "react";
 const images = [
   {
     id: 1,
-    src: "/placeholder.svg?height=600&width=400",
+    src: "/love-anniversary/placeholder.svg?height=600&width=400",
     alt: "Kỷ niệm 1",
     caption: "Bức ảnh đầu tiên",
     description:
@@ -27,7 +27,7 @@ const images = [
   },
   {
     id: 2,
-    src: "/placeholder.svg?height=400&width=600",
+    src: "/love-anniversary/placeholder.svg?height=400&width=600",
     alt: "Kỷ niệm 2",
     caption: "Chuyến du lịch đầu tiên",
     description:
@@ -35,7 +35,7 @@ const images = [
   },
   {
     id: 3,
-    src: "/placeholder.svg?height=500&width=500",
+    src: "/love-anniversary/placeholder.svg?height=500&width=500",
     alt: "Kỷ niệm 3",
     caption: "Sinh nhật đáng nhớ",
     description:
@@ -43,14 +43,14 @@ const images = [
   },
   {
     id: 4,
-    src: "/placeholder.svg?height=800&width=600",
+    src: "/love-anniversary/placeholder.svg?height=800&width=600",
     alt: "Kỷ niệm 4",
     caption: "Ngày lễ giáng sinh đầu tiên",
     description: "Vào ngày lễ giáng sinh đầu",
   },
   {
     id: 5,
-    src: "/placeholder.svg?height=400&width=600",
+    src: "/love-anniversary/placeholder.svg?height=400&width=600",
     alt: "Kỷ niệm 5",
     caption: "Dạo phố cùng nhau",
     description:
@@ -58,7 +58,7 @@ const images = [
   },
   {
     id: 6,
-    src: "/placeholder.svg?height=600&width=400",
+    src: "/love-anniversary/placeholder.svg?height=600&width=400",
     alt: "Kỷ niệm 6",
     caption: "Khoảnh khắc đáng nhớ",
     description:
@@ -66,7 +66,7 @@ const images = [
   },
   {
     id: 7,
-    src: "/placeholder.svg?height=500&width=700",
+    src: "/love-anniversary/placeholder.svg?height=500&width=700",
     alt: "Kỷ niệm 7",
     caption: "Cái tết đầu tiên",
     description:
@@ -74,7 +74,7 @@ const images = [
   },
   {
     id: 8,
-    src: "/placeholder.svg?height=600&width=600",
+    src: "/love-anniversary/placeholder.svg?height=600&width=600",
     alt: "Kỷ niệm 8",
     caption: "Cùng nhau nấu ăn",
     description:
@@ -263,7 +263,9 @@ export default function Timeline() {
                 <div className="flex flex-col md:flex-row">
                   <div className="relative w-full md:w-2/3 aspect-[4/3]">
                     <Image
-                      src={selectedImage.src || "/placeholder.svg"}
+                      src={
+                        selectedImage.src || "/love-anniversary/placeholder.svg"
+                      }
                       alt={selectedImage.alt}
                       fill
                       className="object-contain"
