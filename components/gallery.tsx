@@ -28,7 +28,7 @@ const images = [
   },
   {
     id: 3,
-    src: "/placeholder.svg?height=500&width=500",
+    src: "./placeholder.svg?height=500&width=500",
     alt: "Kỷ niệm 3",
     caption: "Sinh nhật đáng nhớ",
     description:
@@ -36,14 +36,14 @@ const images = [
   },
   {
     id: 4,
-    src: "/placeholder.svg?height=800&width=600",
+    src: "./placeholder.svg?height=800&width=600",
     alt: "Kỷ niệm 4",
     caption: "Ngày lễ giáng sinh đầu tiên",
     description: "Vào ngày lễ giáng sinh đầu ",
   },
   {
     id: 5,
-    src: "/placeholder.svg?height=400&width=600",
+    src: "./placeholder.svg?height=400&width=600",
     alt: "Kỷ niệm 5",
     caption: "Dạo phố cùng nhau",
     description:
@@ -51,7 +51,7 @@ const images = [
   },
   {
     id: 6,
-    src: "/placeholder.svg?height=600&width=400",
+    src: "./placeholder.svg?height=600&width=400",
     alt: "Kỷ niệm 6",
     caption: "Khoảnh khắc đáng nhớ",
     description:
@@ -59,7 +59,7 @@ const images = [
   },
   {
     id: 7,
-    src: "/placeholder.svg?height=500&width=700",
+    src: "./placeholder.svg?height=500&width=700",
     alt: "Kỷ niệm 7",
     caption: "cái tết đầu tiên",
     description:
@@ -67,7 +67,7 @@ const images = [
   },
   {
     id: 8,
-    src: "/placeholder.svg?height=600&width=600",
+    src: "./placeholder.svg?height=600&width=600",
     alt: "Kỷ niệm 8",
     caption: "Cùng nhau nấu ăn",
     description:
@@ -162,7 +162,7 @@ export default function Gallery() {
               >
                 <div className="relative w-full h-64 sm:h-72 md:h-80 overflow-hidden group">
                   <Image
-                    src={image.src || "/placeholder.svg"}
+                    src={image.src || "./placeholder.svg"}
                     alt={image.alt}
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
@@ -199,7 +199,7 @@ export default function Gallery() {
                 <div className="flex flex-col md:flex-row">
                   <div className="relative w-full md:w-2/3 aspect-[4/3]">
                     <Image
-                      src={selectedImage.src || "/placeholder.svg"}
+                      src={selectedImage.src || "./placeholder.svg"}
                       alt={selectedImage.alt}
                       fill
                       className="object-contain"
