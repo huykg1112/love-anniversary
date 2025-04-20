@@ -40,7 +40,7 @@ h6 {
   height: 100%;
   pointer-events: none;
   z-index: 0;
-  background-image: url("/love-anniversary/images/cherry-blossom.png");
+  /* background-image: url("/love-anniversary/images/cherry-blossom.png"); */
   background-repeat: repeat;
   animation: fall 15s linear infinite;
 }

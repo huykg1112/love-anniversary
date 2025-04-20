@@ -60,7 +60,7 @@ export default function MusicPlayer() {
 
       {/* Replace with actual audio file */}
       <audio ref={audioRef} loop>
-        <source src="/mp3/y2mate.com.mp3" type="audio/mpeg" />
+        <source src="/love-anniversary/mp3/y2mate.com.mp3" type="audio/mpeg" />
         Your browser does not support the audio element.
       </audio>
     </div>

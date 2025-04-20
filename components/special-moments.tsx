@@ -12,7 +12,7 @@ const specialMoments = [
     title: "Lần đầu nắm tay",
     description:
       "Khoảnh khắc đầu tiên anh nắm lấy bàn tay nhỏ bé của em, cảm giác ấm áp và hạnh phúc khó tả.",
-    image: "/love-anniversary/placeholder.svg?height=600&width=800",
+    image: "/placeholder.svg?height=600&width=800",
     align: "left",
   },
   {
@@ -20,7 +20,7 @@ const specialMoments = [
     title: "Buổi hẹn hò đầu tiên",
     description:
       "Buổi hẹn đầu tiên tại quán cafe nhỏ, nơi chúng ta đã trò chuyện suốt nhiều giờ không biết chán.",
-    image: "/love-anniversary/placeholder.svg?height=600&width=800",
+    image: "/placeholder.svg?height=600&width=800",
     align: "right",
   },
   {
@@ -28,7 +28,7 @@ const specialMoments = [
     title: "Chuyến du lịch đáng nhớ",
     description:
       "Chuyến đi đầu tiên của hai đứa, những kỷ niệm tuyệt vời mà chúng ta không bao giờ quên.",
-    image: "/love-anniversary/placeholder.svg?height=600&width=800",
+    image: "/placeholder.svg?height=600&width=800",
     align: "left",
   },
   {
@@ -36,7 +36,7 @@ const specialMoments = [
     title: "Khoảnh khắc đặc biệt",
     description:
       "Những giây phút bình yên bên nhau, chỉ cần có em bên cạnh, mọi thứ đều trở nên tuyệt vời.",
-    image: "/love-anniversary/placeholder.svg?height=600&width=800",
+    image: "/placeholder.svg?height=600&width=800",
     align: "right",
   },
 ];
@@ -149,7 +149,7 @@ function MomentItem({
         >
           <div className="relative aspect-[4/3] w-full overflow-hidden rounded-lg shadow-lg">
             <Image
-              src={moment.image || "/love-anniversary/placeholder.svg"}
+              src={moment.image || "/placeholder.svg"}
               alt={moment.title}
               fill
               className="object-cover transition-transform duration-700 hover:scale-105"

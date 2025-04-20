@@ -12,7 +12,7 @@ import { useRef, useState } from "react";
 const images = [
   {
     id: 1,
-    src: "/Gallery/StartDay.jpg?height=600&width=400",
+    src: "/love-anniversary/Gallery/StartDay.jpg",
     alt: "Kỷ niệm 1",
     caption: "Bức ảnh đầu tiên",
     description:
@@ -20,7 +20,7 @@ const images = [
   },
   {
     id: 2,
-    src: "/Gallery/AnGiang1.jpg?height=400&width=600",
+    src: "/love-anniversary/Gallery/AnGiang1.jpg",
     alt: "Kỷ niệm 2",
     caption: "Chuyến du lịch đầu tiên",
     description:
@@ -28,50 +28,59 @@ const images = [
   },
   {
     id: 3,
-    src: "/love-anniversary/placeholder.svg?height=500&width=500",
+    src: "/love-anniversary/Gallery/BD.jpg",
     alt: "Kỷ niệm 3",
     caption: "Sinh nhật đáng nhớ",
     description:
-      "Sinh nhật em năm đó, anh đã chuẩn bị rất nhiều bất ngờ và niềm vui.",
+      "Sinh nhật em năm đó cũng là sinh nhật cuối anh đón cùng em 😔😔😔",
   },
   {
     id: 4,
-    src: "/love-anniversary/placeholder.svg?height=800&width=600",
+    src: "/love-anniversary/Gallery/dutrend.jpg",
     alt: "Kỷ niệm 4",
-    caption: "Ngày lễ giáng sinh đầu tiên",
-    description: "Vào ngày lễ giáng sinh đầu ",
+    caption: "Đu trend dịch Covid",
+    description:
+      "Hong có tiền mua nhẫn nên lấy khẩu trang làm nhẫn rồi sau này đền bằng một đám cưới nha 🤭🤭🤭.",
   },
   {
     id: 5,
-    src: "/love-anniversary/placeholder.svg?height=400&width=600",
+    src: "/love-anniversary/Gallery/bd_me1.jpg",
     alt: "Kỷ niệm 5",
-    caption: "Dạo phố cùng nhau",
+    caption: "Ngày lễ giáng sinh",
     description:
-      "Những buổi chiều lang thang trên phố, tay trong tay không biết mệt.",
+      "Giang sinh và sinh nhật của anh, chỉ có hai đứa mình cùng chiếc bánh kem em dành cho anh🎉🎅💖.",
   },
   {
     id: 6,
-    src: "/love-anniversary/placeholder.svg?height=600&width=400",
+    src: "/love-anniversary/Gallery/Camping.jpg",
     alt: "Kỷ niệm 6",
-    caption: "Khoảnh khắc đáng nhớ",
+    caption: "Đêm cấm trại",
     description:
-      "Một trong những khoảnh khắc đáng nhớ nhất của chúng ta, đơn giản nhưng đầy ý nghĩa.",
+      "Tuy 2 đứa đã ra trường, ngỡ như không còn cơ hội nào để cắm trại nữa, Thanh xuân cấp 3 thật đẹp khi có em 💕💕💕.",
   },
   {
     id: 7,
-    src: "/love-anniversary/placeholder.svg?height=500&width=700",
+    src: "/love-anniversary/Gallery/AnGiang_2023.jpg",
     alt: "Kỷ niệm 7",
-    caption: "cái tết đầu tiên",
+    caption: "Khoảnh khắc đáng nhớ",
     description:
-      "Tết đầu tiên bên nhau, những kỷ niệm vui vẻ và ấm áp bên nhau, khép lại năm đầu tiên của thanh xuân này.",
+      "Chuyến đi An Giang vội vã, nhưng lại là chuyến đi đáng nhớ nhất chúng mình. Yêu xa từ đây 😔😢😭 ",
   },
   {
     id: 8,
-    src: "/love-anniversary/placeholder.svg?height=600&width=600",
+    src: "/love-anniversary/Gallery/high_school_graduation.jpg",
     alt: "Kỷ niệm 8",
-    caption: "Cùng nhau nấu ăn",
+    caption: "Tốt nghiệp cấp 3",
     description:
-      "Lần đầu tiên chúng ta cùng nhau vào bếp, mặc dù hơi lộn xộn nhưng rất vui.",
+      "Tốt nghiệp cấp 3, một cái kết đẹp cho một hành trình dài. Chúng mình đã cùng nhau trải qua biết bao kỷ niệm đáng nhớ, và giờ đây là lúc để bắt đầu một chương mới trong cuộc đời.",
+  },
+  {
+    id: 9,
+    src: "/love-anniversary/Gallery/Mung1.jpg",
+    alt: "Kỷ niệm 9",
+    caption: 'Tết đẹp nhất "2025"',
+    description:
+      "Hơn 1 năm yêu xa. Một cái ôm, một cái nắm tay cũng là điều xa xỉ. Bởi vậy, chúng mình càng trân trọng những khoảnh khắc bên nhau hơn bao giờ hết 💖💖💖.",
   },
 ];
 
@@ -139,8 +148,8 @@ export default function Gallery() {
         >
           {images.map((image, index) => {
             // Determine if this image should span multiple columns or rows
-            const isWide = 0;
-            const isTall = 0;
+            const isWide = index % 5 === 1 || index % 7 === 0;
+            const isTall = index % 4 === 2 || index % 6 === 0;
 
             return (
               <motion.div
@@ -162,7 +171,7 @@ export default function Gallery() {
               >
                 <div className="relative w-full h-64 sm:h-72 md:h-80 overflow-hidden group">
                   <Image
-                    src={image.src || "/love-anniversary/placeholder.svg"}
+                    src={image.src || "/placeholder.svg"}
                     alt={image.alt}
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
@@ -199,9 +208,7 @@ export default function Gallery() {
                 <div className="flex flex-col md:flex-row">
                   <div className="relative w-full md:w-2/3 aspect-[4/3]">
                     <Image
-                      src={
-                        selectedImage.src || "/love-anniversary/placeholder.svg"
-                      }
+                      src={selectedImage.src || "/placeholder.svg"}
                       alt={selectedImage.alt}
                       fill
                       className="object-contain"

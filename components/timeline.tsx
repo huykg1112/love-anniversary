@@ -15,124 +15,81 @@ import {
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
-// Dữ liệu ảnh từ Gallery
-const images = [
-  {
-    id: 1,
-    src: "/love-anniversary/placeholder.svg?height=600&width=400",
-    alt: "Kỷ niệm 1",
-    caption: "Bức ảnh đầu tiên",
-    description:
-      "Bức ảnh đầu tiên của chúng ta, nơi mà mọi thứ bắt đầu 🥰🥰🥰.",
-  },
-  {
-    id: 2,
-    src: "/love-anniversary/placeholder.svg?height=400&width=600",
-    alt: "Kỷ niệm 2",
-    caption: "Chuyến du lịch đầu tiên",
-    description:
-      "Chuyến đi đầu tiên của hai đứa mình, An Giang và những kỹ niệm 🌈🌈🌈",
-  },
-  {
-    id: 3,
-    src: "/love-anniversary/placeholder.svg?height=500&width=500",
-    alt: "Kỷ niệm 3",
-    caption: "Sinh nhật đáng nhớ",
-    description:
-      "Sinh nhật em năm đó, anh đã chuẩn bị rất nhiều bất ngờ và niềm vui.",
-  },
-  {
-    id: 4,
-    src: "/love-anniversary/placeholder.svg?height=800&width=600",
-    alt: "Kỷ niệm 4",
-    caption: "Ngày lễ giáng sinh đầu tiên",
-    description: "Vào ngày lễ giáng sinh đầu",
-  },
-  {
-    id: 5,
-    src: "/love-anniversary/placeholder.svg?height=400&width=600",
-    alt: "Kỷ niệm 5",
-    caption: "Dạo phố cùng nhau",
-    description:
-      "Những buổi chiều lang thang trên phố, tay trong tay không biết mệt.",
-  },
-  {
-    id: 6,
-    src: "/love-anniversary/placeholder.svg?height=600&width=400",
-    alt: "Kỷ niệm 6",
-    caption: "Khoảnh khắc đáng nhớ",
-    description:
-      "Một trong những khoảnh khắc đáng nhớ nhất của chúng ta, đơn giản nhưng đầy ý nghĩa.",
-  },
-  {
-    id: 7,
-    src: "/love-anniversary/placeholder.svg?height=500&width=700",
-    alt: "Kỷ niệm 7",
-    caption: "Cái tết đầu tiên",
-    description:
-      "Tết đầu tiên bên nhau, những kỷ niệm vui vẻ và ấm áp bên nhau, khép lại năm đầu tiên của thanh xuân này.",
-  },
-  {
-    id: 8,
-    src: "/love-anniversary/placeholder.svg?height=600&width=600",
-    alt: "Kỷ niệm 8",
-    caption: "Cùng nhau nấu ăn",
-    description:
-      "Lần đầu tiên chúng ta cùng nhau vào bếp, mặc dù hơi lộn xộn nhưng rất vui.",
-  },
-];
-
+// Dữ liệu timeline
 const timelineEvents = [
   {
     date: "01/01/2018",
     title: "Ngày đầu gặp gỡ",
     description: "Lần đầu tiên chúng ta gặp nhau tại...",
     icon: <MapPin className="h-6 w-6 text-white" />,
-    imageId: 1, // Liên kết với ảnh có id=1
+    src: "/love-anniversary/placeholder.svg?height=600&width=400",
+    alt: "Kỷ niệm 1",
+    caption: "Bức ảnh đầu tiên",
+    imageDescription:
+      "Bức ảnh đầu tiên của chúng ta, nơi mà mọi thứ bắt đầu 🥰🥰🥰.",
   },
   {
     date: "14/02/2018",
     title: "Chính thức yêu nhau",
     description: 'Ngày em nói "Có" và chúng ta bắt đầu hành trình tình yêu...',
     icon: <Heart className="h-6 w-6 text-white" />,
-    imageId: 2,
+    src: "/love-anniversary/placeholder.svg?height=400&width=600",
+    alt: "Kỷ niệm 2",
+    caption: "Chuyến du lịch đầu tiên",
+    imageDescription:
+      "Chuyến đi đầu tiên của hai đứa mình, An Giang và những kỹ niệm 🌈🌈🌈",
   },
   {
     date: "20/10/2018",
     title: "Kỷ niệm đáng nhớ",
     description: "Lần đầu tiên chúng ta cùng nhau đi xem phim...",
     icon: <Gift className="h-6 w-6 text-white" />,
-    imageId: 3,
+    src: "/love-anniversary/placeholder.svg?height=500&width=500",
+    alt: "Kỷ niệm 3",
+    caption: "Sinh nhật đáng nhớ",
+    imageDescription:
+      "Sinh nhật em năm đó, anh đã chuẩn bị rất nhiều bất ngờ và niềm vui.",
   },
   {
     date: "01/05/2019",
     title: "Chuyến du lịch đầu tiên",
     description: "Chuyến đi đầu tiên của chúng ta đến...",
     icon: <Plane className="h-6 w-6 text-white" />,
-    imageId: 4,
+    src: "/love-anniversary/placeholder.svg?height=800&width=600",
+    alt: "Kỷ niệm 4",
+    caption: "Ngày lễ giáng sinh đầu tiên",
+    imageDescription: "Vào ngày lễ giáng sinh đầu",
   },
   {
     date: "14/02/2020",
     title: "Kỷ niệm 2 năm",
     description: "Hai năm bên nhau với bao nhiêu kỷ niệm đẹp...",
     icon: <Calendar className="h-6 w-6 text-white" />,
-    imageId: 5,
+    src: "/love-anniversary/placeholder.svg?height=400&width=600",
+    alt: "Kỷ niệm 5",
+    caption: "Dạo phố cùng nhau",
+    imageDescription:
+      "Những buổi chiều lang thang trên phố, tay trong tay không biết mệt.",
   },
   {
     date: "20/11/2022",
     title: "Khoảnh khắc đáng nhớ",
     description: "Cùng nhau chụp bộ ảnh kỷ niệm tuyệt đẹp...",
     icon: <Camera className="h-6 w-6 text-white" />,
-    imageId: 6,
+    src: "/love-anniversary/placeholder.svg?height=600&width=400",
+    alt: "Kỷ niệm 6",
+    caption: "Khoảnh khắc đáng nhớ",
+    imageDescription:
+      "Một trong những khoảnh khắc đáng nhớ nhất của chúng ta, đơn giản nhưng đầy ý nghĩa.",
   },
 ];
 
 export default function Timeline() {
   const timelineRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(timelineRef, { once: true, margin: "-100px" });
-  const [selectedImage, setSelectedImage] = useState<(typeof images)[0] | null>(
-    null
-  );
+  const [selectedImage, setSelectedImage] = useState<
+    (typeof timelineEvents)[0] | null
+  >(null);
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -153,7 +110,7 @@ export default function Timeline() {
     }, 500);
   }, [isInView]);
 
-  const openLightbox = (image: (typeof images)[0], index: number) => {
+  const openLightbox = (image: (typeof timelineEvents)[0], index: number) => {
     setSelectedImage(image);
     setCurrentIndex(index);
   };
@@ -163,25 +120,16 @@ export default function Timeline() {
   };
 
   const goToPrevious = () => {
-    const newIndex = (currentIndex - 1 + images.length) % images.length;
-    setSelectedImage(images[newIndex]);
+    const newIndex =
+      (currentIndex - 1 + timelineEvents.length) % timelineEvents.length;
+    setSelectedImage(timelineEvents[newIndex]);
     setCurrentIndex(newIndex);
   };
 
   const goToNext = () => {
-    const newIndex = (currentIndex + 1) % images.length;
-    setSelectedImage(images[newIndex]);
+    const newIndex = (currentIndex + 1) % timelineEvents.length;
+    setSelectedImage(timelineEvents[newIndex]);
     setCurrentIndex(newIndex);
-  };
-
-  const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === "ArrowLeft") {
-      goToPrevious();
-    } else if (e.key === "ArrowRight") {
-      goToNext();
-    } else if (e.key === "Escape") {
-      closeLightbox();
-    }
   };
 
   return (
@@ -206,42 +154,33 @@ export default function Timeline() {
         <div className="timeline-container">
           <div className="timeline-line"></div>
 
-          {timelineEvents.map((event, index) => {
-            const linkedImage = images.find((img) => img.id === event.imageId);
-            return (
-              <motion.div
-                key={index}
-                className="timeline-item cursor-pointer"
-                initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.2 }}
-                viewport={{ once: true, margin: "-100px" }}
-                onClick={() =>
-                  linkedImage &&
-                  openLightbox(
-                    linkedImage,
-                    images.findIndex((img) => img.id === event.imageId)
-                  )
-                }
-              >
-                <div className="timeline-dot">
-                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                    {event.icon}
-                  </div>
+          {timelineEvents.map((event, index) => (
+            <motion.div
+              key={index}
+              className="timeline-item cursor-pointer"
+              initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
+              viewport={{ once: true, margin: "-100px" }}
+              onClick={() => openLightbox(event, index)}
+            >
+              <div className="timeline-dot">
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                  {event.icon}
                 </div>
+              </div>
 
-                <div className="timeline-content">
-                  <div className="text-sm gradient-text font-semibold mb-2">
-                    {event.date}
-                  </div>
-                  <h3 className="text-xl font-dancing text-gray-800 mb-2">
-                    {event.title}
-                  </h3>
-                  <p className="text-gray-600">{event.description}</p>
+              <div className="timeline-content">
+                <div className="text-sm gradient-text font-semibold mb-2">
+                  {event.date}
                 </div>
-              </motion.div>
-            );
-          })}
+                <h3 className="text-xl font-dancing text-gray-800 mb-2">
+                  {event.title}
+                </h3>
+                <p className="text-gray-600">{event.description}</p>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </motion.div>
 
@@ -253,7 +192,7 @@ export default function Timeline() {
           <AnimatePresence mode="wait">
             {selectedImage && (
               <motion.div
-                key={selectedImage.id}
+                key={selectedImage.src}
                 className="relative glass-card overflow-hidden rounded-xl"
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -263,9 +202,7 @@ export default function Timeline() {
                 <div className="flex flex-col md:flex-row">
                   <div className="relative w-full md:w-2/3 aspect-[4/3]">
                     <Image
-                      src={
-                        selectedImage.src || "/love-anniversary/placeholder.svg"
-                      }
+                      src={selectedImage.src}
                       alt={selectedImage.alt}
                       fill
                       className="object-contain"
@@ -278,7 +215,7 @@ export default function Timeline() {
                       {selectedImage.caption}
                     </h3>
                     <p className="text-gray-700 mb-6">
-                      {selectedImage.description}
+                      {selectedImage.imageDescription}
                     </p>
 
                     <div className="flex justify-between mt-auto">
@@ -292,7 +229,7 @@ export default function Timeline() {
                         <ChevronLeft className="h-5 w-5" />
                       </button>
                       <span className="text-gray-500">
-                        {currentIndex + 1} / {images.length}
+                        {currentIndex + 1} / {timelineEvents.length}
                       </span>
                       <button
                         className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
