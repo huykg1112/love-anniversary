@@ -1,7 +1,7 @@
 "use client";
 
-import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 export default function LoveLetter() {
   const letterRef = useRef<HTMLDivElement>(null);
@@ -16,7 +16,7 @@ export default function LoveLetter() {
     "Anh, Hoàng Huy, sẽ luôn yêu em bằng tất cả những gì anh có. Hôm nay, ngày mai và cả những năm tháng sau này.",
     "Chúc mừng 2000 ngày yêu nhau của chúng ta – một hành trình tuyệt đẹp và đầy ý nghĩa.",
     "Mãi yêu em,",
-    "Hoàng Huy",
+    "Hoàng Huy ❤️",
   ];
   return (
     <section className="py-16 relative" ref={letterRef}>
