@@ -10,7 +10,6 @@ import {
   Gift,
   Heart,
   MapPin,
-  Plane,
 } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
@@ -18,47 +17,52 @@ import { useEffect, useRef, useState } from "react";
 // Dữ liệu timeline
 const timelineEvents = [
   {
-    date: "01/01/2018",
+    date: "05/08/2019",
     title: "Ngày đầu gặp gỡ",
-    description: "Lần đầu tiên chúng ta gặp nhau tại...",
+    description:
+      "Lần đầu tiên chúng mình gây ấn tượng với nhau là vào ngày tựu trường năm lớp 11. Thật ra, trước đó đã từng vô tình gặp nhau một lần khi đi ăn rồi. Người yêu mình nhớ đến mình vì lúc đó mình trông rất cao, ốm như cây sào và có phong cách ăn mặc... rất là lập dị 😅😅😅.",
     icon: <MapPin className="h-6 w-6 text-white" />,
     src: "/love-anniversary/placeholder.svg?height=600&width=400",
     alt: "Kỷ niệm 1",
-    caption: "Bức ảnh đầu tiên",
+    caption: "Ngày đầu gặp gỡ",
     imageDescription:
-      "Bức ảnh đầu tiên của chúng ta, nơi mà mọi thứ bắt đầu 🥰🥰🥰.",
+      "Vào ngày tựu trường đó, mình đã bị ấn tượng bởi người yêu mình — với nụ cười xinh, giọng nói đặc trưng rất dễ nghe và dễ thương nữa nha.",
   },
   {
-    date: "14/02/2018",
+    date: "29/10/2019",
     title: "Chính thức yêu nhau",
-    description: 'Ngày em nói "Có" và chúng ta bắt đầu hành trình tình yêu...',
+    description:
+      "Đây phải nói là một dấu mốc quan trọng trong cuộc đời mình — từ một người bạn thân thiết trở thành người yêu thương nhau. Chúng mình đã cùng nhau trải qua rất nhiều kỷ niệm đẹp và những khoảnh khắc đáng nhớ từ đó đến nay.",
     icon: <Heart className="h-6 w-6 text-white" />,
     src: "/love-anniversary/placeholder.svg?height=400&width=600",
     alt: "Kỷ niệm 2",
-    caption: "Chuyến du lịch đầu tiên",
+    caption: "Chính thức yêu nhau",
     imageDescription:
-      "Chuyến đi đầu tiên của hai đứa mình, An Giang và những kỹ niệm 🌈🌈🌈",
+      "Chúng mình cũng đã có một thời gian tìm hiểu nhau, thấu hiểu nhau trước khi bước chung đường đến bây giờ. Mình tỏ tình thành công bằng đoạn tin nhắn tỏ tình còn dang dở (mình đã chuẩn bị một đoạn văn khá dài từ khá lâu 🤣). Cho đến hôm đó, chúng mình lần đầu cãi nhau (cái này là lỗi của mình 😅), và để cứu lấy tình cảm đã chôn giấu bấy lâu, mình quyết định gửi đoạn tin nhắn tỏ tình còn dang dở đó, lấy hết can đảm để thổ lộ tình cảm của mình. Và thế là... hai trái tim đã cùng nhịp đập🥰🥰🥰",
   },
   {
-    date: "20/10/2018",
+    date: "11/12/2019",
     title: "Kỷ niệm đáng nhớ",
-    description: "Lần đầu tiên chúng ta cùng nhau đi xem phim...",
+    description:
+      "Đó là ngày sinh nhật của mình, người ngiu tặng mình một ly nước ép, một cái áo chính tay lựa cho mình, một cái ôm ấp áp và ... 😊🥰😙",
     icon: <Gift className="h-6 w-6 text-white" />,
     src: "/love-anniversary/placeholder.svg?height=500&width=500",
     alt: "Kỷ niệm 3",
     caption: "Sinh nhật đáng nhớ",
     imageDescription:
-      "Sinh nhật em năm đó, anh đã chuẩn bị rất nhiều bất ngờ và niềm vui.",
+      "Thật ra, ngay cả mình cũng bất ngờ vì... mình không nhớ hôm đó là sinh nhật của mình! Mình đã rất vui khi nhận được món quà bất ngờ từ người yêu. Đó là một chiếc áo rất đẹp, và mình vẫn giữ đến tận bây giờ mặc dù đã không còn mặc vừa nữa 😅. Mình cảm thấy rất hạnh phúc và biết ơn vì có người yêu bên cạnh trong ngày đặc biệt này. Món quà ngọt ngào nhất luôn đó 🥰😘😘.",
   },
   {
-    date: "01/05/2019",
+    date: "18/07/2020",
     title: "Chuyến du lịch đầu tiên",
-    description: "Chuyến đi đầu tiên của chúng ta đến...",
-    icon: <Plane className="h-6 w-6 text-white" />,
+    description:
+      "Chuyến đi chơi xa đầu tiên của chúng mình là đến xứ sở thần tiên An Giang cùng những người bạn, dù chỉ một ngày nhưng toàn bộ chuyến đi là những kỷ niệm đẹp của chúng mình. khép lại năm 11 với những kỷ niệm đẹp.",
+    icon: <MapPin className="h-6 w-6 text-white" />,
     src: "/love-anniversary/placeholder.svg?height=800&width=600",
     alt: "Kỷ niệm 4",
-    caption: "Ngày lễ giáng sinh đầu tiên",
-    imageDescription: "Vào ngày lễ giáng sinh đầu",
+    caption: "Chuyến du lịch đầu tiên",
+    imageDescription:
+      "Dù kế hoạch có chút thay đổi nhưng không sao cả — hôm đó là một ngày đẹp trời, những bức ảnh thật tuyệt và đầy ắp kỷ niệm. Tất cả như một sự chuẩn bị cho năm lớp 12 cuối cấp đầy thử thách.",
   },
   {
     date: "14/02/2020",

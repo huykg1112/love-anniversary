@@ -8,7 +8,6 @@ import Hero from "@/components/hero";
 import LoveLetter from "@/components/love-letter";
 import MusicPlayer from "@/components/music-player";
 import Promises from "@/components/promises";
-import SpecialMoments from "@/components/special-moments";
 import Timeline from "@/components/timeline";
 
 export default function HomePage() {
@@ -33,7 +32,7 @@ export default function HomePage() {
         </div>
         <Promises />
         <div className="py-16 px-4 md:px-8 max-w-6xl mx-auto">
-          <SpecialMoments />
+          {/* <SpecialMoments /> */}
           <LoveLetter />
           <div className="flex flex-col items-center mt-20 mb-10 space-y-8">
             <HeartButton />
