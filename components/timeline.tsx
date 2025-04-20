@@ -3,13 +3,14 @@
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { AnimatePresence, motion, useInView } from "framer-motion";
 import {
+  Cake,
   Calendar,
-  Camera,
   ChevronLeft,
   ChevronRight,
   Gift,
   Heart,
   MapPin,
+  ShieldAlert,
 } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
@@ -53,6 +54,18 @@ const timelineEvents = [
       "Thật ra, ngay cả mình cũng bất ngờ vì... mình không nhớ hôm đó là sinh nhật của mình! Mình đã rất vui khi nhận được món quà bất ngờ từ người yêu. Đó là một chiếc áo rất đẹp, và mình vẫn giữ đến tận bây giờ mặc dù đã không còn mặc vừa nữa 😅. Mình cảm thấy rất hạnh phúc và biết ơn vì có người yêu bên cạnh trong ngày đặc biệt này. Món quà ngọt ngào nhất luôn đó 🥰😘😘.",
   },
   {
+    date: "04/05/2020",
+    title: "Đón sinh nhật của em",
+    description:
+      "Món quà là một chiếc cặp siêu cute. Người yêu thấy mình mua mắc tiền quá nên la mình một chập, mà nhìn cái mặt thì khoái lắm nha 🤣🤣🤣.",
+    icon: <Cake className="h-6 w-6 text-white" />,
+    src: "/love-anniversary/placeholder.svg?height=600&width=400",
+    alt: "Kỷ niệm 4",
+    caption: "Đón sinh nhật của em",
+    imageDescription:
+      "Mình đã chuẩn bị một món quà bất ngờ cho người yêu, và người yêu cũng đã chuẩn bị một món quà rất đặc biệt cho mình. Đó là... 😚 Trời ơi, lúc đó phải nói là tim mình muốn rớt ra ngoài luôn á! Quá bất ngờ nên tui phải chết lặng thật lâu 🤭🤭🤭",
+  },
+  {
     date: "18/07/2020",
     title: "Chuyến du lịch đầu tiên",
     description:
@@ -65,26 +78,161 @@ const timelineEvents = [
       "Dù kế hoạch có chút thay đổi nhưng không sao cả — hôm đó là một ngày đẹp trời, những bức ảnh thật tuyệt và đầy ắp kỷ niệm. Tất cả như một sự chuẩn bị cho năm lớp 12 cuối cấp đầy thử thách.",
   },
   {
-    date: "14/02/2020",
-    title: "Kỷ niệm 2 năm",
-    description: "Hai năm bên nhau với bao nhiêu kỷ niệm đẹp...",
+    date: "29/10/2020",
+    title: "Kỷ niệm 1 năm",
+    description:
+      "Một năm bên nhau — một năm đầy ắp kỷ niệm và những khoảnh khắc đáng nhớ. Dần dần, cả hai đã trưởng thành hơn, yêu thương nhau nhiều hơn, thấu hiểu nhau hơn. Dù có cãi nhau, nhưng chúng mình chưa bao giờ từ bỏ.",
     icon: <Calendar className="h-6 w-6 text-white" />,
     src: "/love-anniversary/placeholder.svg?height=400&width=600",
     alt: "Kỷ niệm 5",
-    caption: "Dạo phố cùng nhau",
+    caption: "Kỷ niệm 1 năm",
     imageDescription:
-      "Những buổi chiều lang thang trên phố, tay trong tay không biết mệt.",
+      "Một năm bên nhau — một năm đầy ắp kỷ niệm và những khoảnh khắc đáng nhớ. Dần dần, cả hai đã trưởng thành hơn, yêu thương nhau nhiều hơn, thấu hiểu nhau hơn. Dù có cãi nhau, nhưng chúng mình chưa bao giờ từ bỏ.",
   },
   {
-    date: "20/11/2022",
-    title: "Khoảnh khắc đáng nhớ",
-    description: "Cùng nhau chụp bộ ảnh kỷ niệm tuyệt đẹp...",
-    icon: <Camera className="h-6 w-6 text-white" />,
+    date: "04/05/2021",
+    title: "Đón sinh nhật của em lần 2",
+    description:
+      " Món quà là bộ đồ ngủ siêu siêu dễ thương cũng anh ngiu siêu cute 💑.",
+    icon: <Cake className="h-6 w-6 text-white" />,
     src: "/love-anniversary/placeholder.svg?height=600&width=400",
     alt: "Kỷ niệm 6",
     caption: "Khoảnh khắc đáng nhớ",
     imageDescription:
-      "Một trong những khoảnh khắc đáng nhớ nhất của chúng ta, đơn giản nhưng đầy ý nghĩa.",
+      "Khoảng thời gian này thật sự là một thử thách cực kỳ lớn đối với mình. Kỳ thi tốt nghiệp THPT Quốc Gia đang đến gần, nhưng nhờ có em — nguồn động lực to lớn — khiến mình không thể gục ngã.",
+  },
+  {
+    date: "09/07/2021",
+    title: "Chung mình kết thúc kỳ thi tốt nghiệp",
+    description:
+      "Kỳ thi tốt nghiệp THPT Quốc Gia đã kết thúc, và chúng mình đã cùng nhau trải qua những ngày tháng đầy căng thẳng và áp lực. Nhưng giờ đây, chúng mình đã có thể thở phào nhẹ nhõm và tận hưởng những khoảnh khắc vui vẻ bên nhau.",
+    icon: <Calendar className="h-6 w-6 text-white" />,
+    src: "/love-anniversary/placeholder.svg?height=400&width=600",
+    alt: "Kỷ niệm 7",
+    caption: "Kết thúc chặng đường cấp 3",
+    imageDescription:
+      "Thật lòng thì mình đã từng nghĩ mình sẽ không thể vượt qua kỳ thi tốt nghiệp. Nhưng nhờ có em luôn ở bên — cùng nhau cố gắng, cùng nhau nỗ lực, cùng nhau vượt qua những khó khăn — anh đã có thêm niềm tin và động lực. Em chính là động lực lớn nhất của anh, là lý do để anh cố gắng mỗi ngày. Cảm ơn em đã cùng anh hoàn thiện bức tranh thanh xuân này✨✨✨.",
+  },
+  {
+    date: "2022",
+    title: "Cùng nhau đón đại dịch Covid",
+    description:
+      "Đại dịch Covid đã khiến chúng mình phải xa nhau một thời gian dài, nhưng cũng chính trong khoảng thời gian này, chúng mình đã học được cách yêu thương và trân trọng nhau hơn bao giờ hết. Dù có xa cách, nhưng tình yêu của chúng mình vẫn luôn bền chặt.",
+    icon: <ShieldAlert className="h-6 w-6 text-white" />,
+    src: "/love-anniversary/placeholder.svg?height=800&width=600",
+    alt: "Kỷ niệm 8",
+    caption: "Cùng nhau đón đại dịch Covid",
+    imageDescription:
+      "Đại dịch Covid đã khiến chúng mình phải xa nhau một thời gian dài, nhưng cũng chính trong khoảng thời gian này, chúng mình đã học được cách yêu thương và trân trọng nhau hơn bao giờ hết. Dù có xa cách, nhưng tình yêu của chúng mình vẫn luôn bền chặt.",
+  },
+  {
+    date: "04/05/2022",
+    title: "Đón sinh nhật của em lần 3",
+    description:
+      " Cùng nhua đi xem phim, ăn uống và chụp hình. Anh thật sự rất vui khi có em bên cạnh trong ngày đặc biệt này. Sinh nhật cuối cùng của em trước khi bước vào một chương mới trong cuộc đời.",
+    icon: <Cake className="h-6 w-6 text-white" />,
+    src: "/love-anniversary/placeholder.svg?height=800&width=600",
+    alt: "Kỷ niệm 8",
+    caption: "Sinh nhật đáng nhớ",
+    imageDescription:
+      "Món quà là một chiếc nhẫn xinh xắn mà 2 đứa cùng đi mua. Thật hạnh phúc khi thấy em trân món quà này.",
+  },
+  {
+    date: "20/11/2022",
+    title: "Lần giận nhau nhiêu nhất",
+    description:
+      "Lần đầu tiên chúng mình cãi nhau thật sự, và cũng là lần đầu tiên mình cảm thấy lo lắng về tình cảm của chúng mình. Nhưng sau đó, chúng mình đã cùng nhau vượt qua và hiểu nhau hơn.",
+    icon: <Heart className="h-6 w-6 text-white" />,
+    src: "/love-anniversary/placeholder.svg?height=600&width=400",
+    alt: "Kỷ niệm 9",
+    caption: "Lần giận nhau nhiều nhất",
+    imageDescription:
+      "Lỗi lần này là do mình, quá trẻ con và bồng bột. Qua lần này nha nhận ra rằng bản thân mình cần phải trưởng thành hơn, cần phải biết kiềm chế cảm xúc của mình hơn. Mình đã học được cách yêu thương và trân trọng nhau hơn bao giờ hết.",
+  },
+  {
+    date: "Tết 2023",
+    title: "Tết của yêu thương",
+    description:
+      "Mõi ngày nào chúng mình cũng gặp nhau, đi chơi, đi ăn, đi chúc tết và chụp hình. Mỗi bước chân điều có nhau. Tết năm đó 2 đứa được lì xì nhiều lắm nha 🤣🤣🤣.",
+    icon: <MapPin className="h-6 w-6 text-white" />,
+    src: "/love-anniversary/placeholder.svg?height=600&width=400",
+    alt: "Kỷ niệm 9",
+    caption: 'Tết đẹp nhất "2025"',
+    imageDescription:
+      "Tết đầu tiên, hai đứa cùng đi ngắm pháo hoa ở Cờ Đỏ nè. Nhưng tết năm đó mình lại mắc một lỗi nghiêm trọng khiến người yêu giận. Đến giờ nghĩ lại, mình vẫn thấy bản thân thật nguuuu. Nhưng người yêu vẫn tha thứ cho mình, nhưng mình không thể nào tha thứ cho bản thân — một bài học mà mình sẽ không bao giờ quên.",
+  },
+
+  {
+    date: "25/042023",
+    title: "Chuyến đi An Giang",
+    description:
+      "Chuyến đi An Giang vội vã, nhưng lại là chuyến đi đáng nhớ nhất chúng mình. Thật sự rất vui, những cũng rất buồn vì sau chuyến đi này, tui mình sẽ bắt đầu một hành trình mới — hành trình yêu xa.",
+    icon: <MapPin className="h-6 w-6 text-white" />,
+    src: "/love-anniversary/placeholder.svg?height=600&width=400",
+    alt: "Kỷ niệm 9",
+    caption: "Chuyến đi An Giang",
+    imageDescription:
+      "Mỗi khoảnh khắc đều đáng nhớ, mỗi kỷ niệm đều đáng trân trọng. ",
+  },
+  {
+    date: "30/4/2023",
+    title: "Hành trình yêu xa",
+    description:
+      "Ngày hôm đó, cả hai cùng nhau lên Sài Gòn, cùng đi chơi, cùng đi ăn. Nhưng khi trở về, cả hai đều không thể nào ngừng khóc. Đó thật sự là một ngày rất buồn. Hành trình yêu xa bắt đầu từ đây.",
+    icon: <Heart className="h-6 w-6 text-white" />,
+    src: "/love-anniversary/placeholder.svg?height=600&width=400",
+    alt: "Kỷ niệm 9",
+    caption: "Hành trình yêu xa",
+    imageDescription:
+      "Hôm đó, khi nhìn em bước qua cánh cổng an ninh sân bay, lòng anh như thắt lại. Hình bóng em dần khuất sau dòng người. Khoảnh khắc chia ly ấy buồn đến nghẹn lòng. Trên chuyến xe trở về hôm ấy, chỉ còn lại anh và sự trống vắng kéo dài vô tận.",
+  },
+  {
+    date: "06/01/2024",
+    title: "Ngiu bất ngờ về",
+    description:
+      "Sau một thời gian yêu xa, người yêu mình đã bất ngờ về mạng theo bao nhớ thương. Khoản khác mẹ gọi xuống nhà lấy đồ và từ xa mình đã thấy bóng dáng người yêu mình. Mình đã rất bất ngờ, cứ như là mơ vậy, cho đến khi em gọi mình và ôm lấy mình, mình mới biết là thật. Bao nhiêu thương nhớ, bao nhiêu mong chờ đều được đền đáp trong khoảnh khắc đó.",
+    icon: <Heart className="h-6 w-6 text-white" />,
+    src: "/love-anniversary/placeholder.svg?height=600&width=400",
+    alt: "Kỷ niệm 9",
+    caption: "Ngiu bất ngờ về",
+    imageDescription:
+      "Khoản khắc mãi không thể nào quên. Mình đã rất bất ngờ, cứ như là mơ vậy.",
+  },
+  {
+    date: "27/01/2024",
+    title: "Em trở lại Đài Loan",
+    description:
+      "Thời gian trôi qua thật nhanh, chỉ mới hôm nào còn bên nhau, giờ đây lại phải chia xa. Nhưng mình biết rằng, tình yêu của chúng mình sẽ vượt qua mọi khoảng cách. Hành trình yêu xa lại bắt đầu. Hẹn gặp lại em trong những kỷ niệm đẹp nhất. ",
+    icon: <Heart className="h-6 w-6 text-white" />,
+    src: "/love-anniversary/placeholder.svg?height=600&width=400",
+    alt: "Kỷ niệm 9",
+    caption: "Em trở lại Đài Loan",
+    imageDescription:
+      "Vì lần trước em về đã tạo cho anh một bất ngờ, nên lần này khi em bay, anh lén trốn lên Sài Gòn tiễn em như một ‘món trả thù’ nho nhỏ 🤣. Nhưng không ngờ, hôm đó lại trở thành một ngày thật buồn… Cảm xúc lúc ấy chẳng khác gì lần tiễn em ra sân bay sang Đài Loan. Trên chuyến xe trở về, mọi thứ bỗng trở nên thật dài, thật lặng, và đầy khoảng trống... 😔",
+  },
+  {
+    date: "23/01/2025",
+    title: "Ngiu trở về nước",
+    description:
+      "Lần đầu là 6 tháng, nhưng lần này là một năm. Một năm yêu xa, một năm không được gặp nhau. Khoảnh khắc nhìn thấy em bước ra từ cánh cổng an ninh sân bay, dường như mọi nỗi nhớ, mọi mong chờ trong anh đều được vỡ òa. Anh đã chờ đợi khoảnh khắc ấy quá lâu… Và khi ôm em vào lòng, anh không thể kìm nén được cảm xúc của mình nữa. Em đã trở về",
+    icon: <Heart className="h-6 w-6 text-white" />,
+    src: "/love-anniversary/placeholder.svg?height=600&width=400",
+    alt: "Kỷ niệm 9",
+    caption: "Ngiu trở về nước",
+    imageDescription:
+      "Một năm yêu xa, Có những lúc chúng mình dường như đã đến bên bờ vực chia tay. Ngày sinh nhật của em, anh đã không thể ở bên cạnh em, ngày lễ tình nhân cũng vậy. Ngày kỹ niệm lại càng không thể. Tuy khó khăn là vậy, chúng mình càng cảm thấy trân trọng những khoảnh khắc bên nhau hơn. Những lần video call, những tin nhắn, những cuộc gọi bất ngờ đều trở thành những kỷ niệm đẹp trong hành trình yêu xa của chúng mình.",
+  },
+  {
+    date: "20/04/2025",
+    title: "Kỷ niệm 2000 ngày yêu nhau",
+    description:
+      "Một kỷ niệm đáng nhớ trong hành trình yêu nhau của chúng mình. 2000 ngày bên nhau, 2000 ngày đầy ắp kỷ niệm và những khoảnh khắc đáng nhớ. Dù có cãi nhau, nhưng chúng mình chưa bao giờ từ bỏ.",
+    icon: <Calendar className="h-6 w-6 text-white" />,
+    src: "/love-anniversary/placeholder.svg?height=400&width=600",
+    alt: "Kỷ niệm 10",
+    caption: "Kỷ niệm 2000 ngày yêu nhau",
+    imageDescription:
+      "Hành trình yêu xa vãn chưa kết thúc. Chúng mình đã cùng nhau vượt qua rất nhiều khó khăn và thử thách trong tình yêu. Tình yêu của chúng mình đã trở nên mạnh mẽ hơn bao giờ hết. và chúng mình sẽ chấm dứt hành trình này bằng một đám cưới. Mình cùng nhau viết tiếp câu chuyện tình yêu của chúng mình.",
   },
 ];
 
