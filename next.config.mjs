@@ -9,9 +9,9 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: "/love-anniversary",
-  assetPrefix: "/love-anniversary",
-  output: "export",
+  // basePath: "/love-anniversary",
+  // assetPrefix: "/love-anniversary",
+  // output: "export",
 };
 
 export default nextConfig;
