@@ -82,6 +82,14 @@ const images = [
     description:
       "Hơn 1 năm yêu xa. Một cái ôm, một cái nắm tay cũng là điều xa xỉ. Bởi vậy, chúng mình càng trân trọng những khoảnh khắc bên nhau hơn bao giờ hết 💖💖💖.",
   },
+  {
+    id:10;
+    src: "/love-anniversary/Gallery/day2000.jpg",
+    alt: "Kỷ niệm 10",
+    caption: "Ngày kỷ niệm 2000 ngày yêu nhau",
+    description:
+      "Ngày kỷ niệm 2000 ngày yêu nhau, một cột mốc đáng nhớ trong hành trình tình yêu của chúng mình. Chúng ta đã cùng nhau trải qua biết bao thăng trầm, và giờ đây là lúc để nhìn lại những kỷ niệm đẹp đẽ mà chúng ta đã tạo ra.",
+  }
 ];
 
 export default function Gallery() {

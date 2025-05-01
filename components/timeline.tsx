@@ -156,7 +156,7 @@ const timelineEvents = [
       "Mõi ngày nào chúng mình cũng gặp nhau, đi chơi, đi ăn, đi chúc tết và chụp hình. Mỗi bước chân điều có nhau. Tết năm đó 2 đứa được lì xì nhiều lắm nha 🤣🤣🤣.",
     icon: <MapPin className="h-6 w-6 text-white" />,
     src: "/love-anniversary/placeholder.svg?height=600&width=400",
-    alt: "Kỷ niệm 9",
+    alt: "Kỷ niệm 10",
     caption: 'Tết đẹp nhất "2025"',
     imageDescription:
       "Tết đầu tiên, hai đứa cùng đi ngắm pháo hoa ở Cờ Đỏ nè. Nhưng tết năm đó mình lại mắc một lỗi nghiêm trọng khiến người yêu giận. Đến giờ nghĩ lại, mình vẫn thấy bản thân thật nguuuu. Nhưng người yêu vẫn tha thứ cho mình, nhưng mình không thể nào tha thứ cho bản thân — một bài học mà mình sẽ không bao giờ quên.",
@@ -169,7 +169,7 @@ const timelineEvents = [
       "Chuyến đi An Giang vội vã, nhưng lại là chuyến đi đáng nhớ nhất chúng mình. Thật sự rất vui, những cũng rất buồn vì sau chuyến đi này, tui mình sẽ bắt đầu một hành trình mới — hành trình yêu xa.",
     icon: <MapPin className="h-6 w-6 text-white" />,
     src: "/love-anniversary/placeholder.svg?height=600&width=400",
-    alt: "Kỷ niệm 9",
+    alt: "Kỷ niệm 11",
     caption: "Chuyến đi An Giang",
     imageDescription:
       "Mỗi khoảnh khắc đều đáng nhớ, mỗi kỷ niệm đều đáng trân trọng. ",
@@ -181,7 +181,7 @@ const timelineEvents = [
       "Ngày hôm đó, cả hai cùng nhau lên Sài Gòn, cùng đi chơi, cùng đi ăn. Nhưng khi trở về, cả hai đều không thể nào ngừng khóc. Đó thật sự là một ngày rất buồn. Hành trình yêu xa bắt đầu từ đây.",
     icon: <Heart className="h-6 w-6 text-white" />,
     src: "/love-anniversary/placeholder.svg?height=600&width=400",
-    alt: "Kỷ niệm 9",
+    alt: "Kỷ niệm 12",
     caption: "Hành trình yêu xa",
     imageDescription:
       "Hôm đó, khi nhìn em bước qua cánh cổng an ninh sân bay, lòng anh như thắt lại. Hình bóng em dần khuất sau dòng người. Khoảnh khắc chia ly ấy buồn đến nghẹn lòng. Trên chuyến xe trở về hôm ấy, chỉ còn lại anh và sự trống vắng kéo dài vô tận.",
@@ -193,7 +193,7 @@ const timelineEvents = [
       "Sau một thời gian yêu xa, người yêu mình đã bất ngờ về mạng theo bao nhớ thương. Khoản khác mẹ gọi xuống nhà lấy đồ và từ xa mình đã thấy bóng dáng người yêu mình. Mình đã rất bất ngờ, cứ như là mơ vậy, cho đến khi em gọi mình và ôm lấy mình, mình mới biết là thật. Bao nhiêu thương nhớ, bao nhiêu mong chờ đều được đền đáp trong khoảnh khắc đó.",
     icon: <Heart className="h-6 w-6 text-white" />,
     src: "/love-anniversary/placeholder.svg?height=600&width=400",
-    alt: "Kỷ niệm 9",
+    alt: "Kỷ niệm 13",
     caption: "Ngiu bất ngờ về",
     imageDescription:
       "Khoản khắc mãi không thể nào quên. Mình đã rất bất ngờ, cứ như là mơ vậy.",
@@ -205,7 +205,7 @@ const timelineEvents = [
       "Thời gian trôi qua thật nhanh, chỉ mới hôm nào còn bên nhau, giờ đây lại phải chia xa. Nhưng mình biết rằng, tình yêu của chúng mình sẽ vượt qua mọi khoảng cách. Hành trình yêu xa lại bắt đầu. Hẹn gặp lại em trong những kỷ niệm đẹp nhất. ",
     icon: <Heart className="h-6 w-6 text-white" />,
     src: "/love-anniversary/placeholder.svg?height=600&width=400",
-    alt: "Kỷ niệm 9",
+    alt: "Kỷ niệm 14",
     caption: "Em trở lại Đài Loan",
     imageDescription:
       "Vì lần trước em về đã tạo cho anh một bất ngờ, nên lần này khi em bay, anh lén trốn lên Sài Gòn tiễn em như một ‘món trả thù’ nho nhỏ 🤣. Nhưng không ngờ, hôm đó lại trở thành một ngày thật buồn… Cảm xúc lúc ấy chẳng khác gì lần tiễn em ra sân bay sang Đài Loan. Trên chuyến xe trở về, mọi thứ bỗng trở nên thật dài, thật lặng, và đầy khoảng trống... 😔",
@@ -214,10 +214,10 @@ const timelineEvents = [
     date: "23/01/2025",
     title: "Ngiu trở về nước",
     description:
-      "Lần đầu là 6 tháng, nhưng lần này là một năm. Một năm yêu xa, một năm không được gặp nhau. Khoảnh khắc nhìn thấy em bước ra từ cánh cổng an ninh sân bay, dường như mọi nỗi nhớ, mọi mong chờ trong anh đều được vỡ òa. Anh đã chờ đợi khoảnh khắc ấy quá lâu… Và khi ôm em vào lòng, anh không thể kìm nén được cảm xúc của mình nữa. Em đã trở về",
+      "Lần đầu là 8 tháng, nhưng lần này là một năm. Một năm yêu xa, một năm không được gặp nhau. Khoảnh khắc nhìn thấy em bước ra từ cánh cổng an ninh sân bay, dường như mọi nỗi nhớ, mọi mong chờ trong anh đều được vỡ òa. Anh đã chờ đợi khoảnh khắc ấy quá lâu… Và khi ôm em vào lòng, anh không thể kìm nén được cảm xúc của mình nữa. Em đã trở về",
     icon: <Heart className="h-6 w-6 text-white" />,
     src: "/love-anniversary/placeholder.svg?height=600&width=400",
-    alt: "Kỷ niệm 9",
+    alt: "Kỷ niệm 15",
     caption: "Ngiu trở về nước",
     imageDescription:
       "Một năm yêu xa, Có những lúc chúng mình dường như đã đến bên bờ vực chia tay. Ngày sinh nhật của em, anh đã không thể ở bên cạnh em, ngày lễ tình nhân cũng vậy. Ngày kỹ niệm lại càng không thể. Tuy khó khăn là vậy, chúng mình càng cảm thấy trân trọng những khoảnh khắc bên nhau hơn. Những lần video call, những tin nhắn, những cuộc gọi bất ngờ đều trở thành những kỷ niệm đẹp trong hành trình yêu xa của chúng mình.",
@@ -229,7 +229,7 @@ const timelineEvents = [
       "Một kỷ niệm đáng nhớ trong hành trình yêu nhau của chúng mình. 2000 ngày bên nhau, 2000 ngày đầy ắp kỷ niệm và những khoảnh khắc đáng nhớ. Dù có cãi nhau, nhưng chúng mình chưa bao giờ từ bỏ.",
     icon: <Calendar className="h-6 w-6 text-white" />,
     src: "/love-anniversary/placeholder.svg?height=400&width=600",
-    alt: "Kỷ niệm 10",
+    alt: "Kỷ niệm 16",
     caption: "Kỷ niệm 2000 ngày yêu nhau",
     imageDescription:
       "Hành trình yêu xa vãn chưa kết thúc. Chúng mình đã cùng nhau vượt qua rất nhiều khó khăn và thử thách trong tình yêu. Tình yêu của chúng mình đã trở nên mạnh mẽ hơn bao giờ hết. và chúng mình sẽ chấm dứt hành trình này bằng một đám cưới. Mình cùng nhau viết tiếp câu chuyện tình yêu của chúng mình.",
