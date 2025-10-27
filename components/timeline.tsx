@@ -240,7 +240,7 @@ const timelineEvents = [
     description:
       "Chúc mừng 6 năm yêu nhau của chúng ta – một hành trình tuyệt đẹp và đầy ý nghĩa. Mãi yêu em.",
     icon: <Heart className="h-6 w-6 text-white" />,
-    src: "/love-anniversary/mp4/ky_niem_6_nam_2.mp4",
+    src: "mp4/ky_niem_6_nam_2.mp4",
     alt: "Kỷ niệm 17",
     caption: "Kỷ niệm 6 năm yêu nhau",
     imageDescription:
