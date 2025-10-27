@@ -234,6 +234,19 @@ const timelineEvents = [
     imageDescription:
       "Hành trình yêu xa vãn chưa kết thúc. Chúng mình đã cùng nhau vượt qua rất nhiều khó khăn và thử thách trong tình yêu. Tình yêu của chúng mình đã trở nên mạnh mẽ hơn bao giờ hết. và chúng mình sẽ chấm dứt hành trình này bằng một đám cưới. Mình cùng nhau viết tiếp câu chuyện tình yêu của chúng mình.",
   },
+  {
+    date: "29/10/2025",
+    title: "Kỷ niệm 6 năm yêu nhau",
+    description:
+      "Chúc mừng 6 năm yêu nhau của chúng ta – một hành trình tuyệt đẹp và đầy ý nghĩa. Mãi yêu em.",
+    icon: <Heart className="h-6 w-6 text-white" />,
+    src: "/love-anniversary/mp4/ky_niem_6_nam_2.mp4",
+    alt: "Kỷ niệm 17",
+    caption: "Kỷ niệm 6 năm yêu nhau",
+    imageDescription:
+      "Mình đã chuẩn bị một món quà đặc biệt để kỷ niệm 6 năm yêu nhau của chúng mình. Món quà này không chỉ là một vật phẩm, mà còn là biểu tượng của tình yêu và sự gắn kết giữa chúng mình. Mình hy vọng em sẽ thích nó và nó sẽ trở thành một phần quan trọng trong hành trình tình yêu của chúng mình.",
+    isVideo: true,
+  }
 ];
 
 export default function Timeline() {
@@ -353,13 +366,24 @@ export default function Timeline() {
               >
                 <div className="flex flex-col md:flex-row">
                   <div className="relative w-full md:w-2/3 aspect-[4/3]">
-                    <Image
-                      src={selectedImage.src}
-                      alt={selectedImage.alt}
-                      fill
-                      className="object-contain"
-                      sizes="(max-width: 768px) 100vw, 66vw"
-                    />
+                    {selectedImage.isVideo ? (
+                      <video
+                        src={selectedImage.src}
+                        className="w-full h-full object-contain"
+                        controls
+                        autoPlay
+                        loop
+                        playsInline
+                      />
+                    ) : (
+                      <Image
+                        src={selectedImage.src}
+                        alt={selectedImage.alt}
+                        fill
+                        className="object-contain"
+                        sizes="(max-width: 768px) 100vw, 66vw"
+                      />
+                    )}
                   </div>
 
                   <div className="p-6 md:w-1/3 bg-white/90 backdrop-blur-sm">

@@ -14,9 +14,9 @@ const dancingScript = Dancing_Script({
 });
 
 export const metadata = {
-  title: "Kỷ niệm 2000 Ngày Yêu Nhau - Qy & NYL",
-  description: "Trang kỷ niệm 2000 ngày yêu nhau của Qy và NYL",
-  generator: "v0.dev",
+  title: "Kỷ niệm 6 năm Yêu Nhau - Qy & NYL",
+  description: "Trang kỷ niệm 6 năm yêu nhau của Qy và NYL",
+  generator: "Trần Hoàng Huy",
 };
 
 export default function RootLayout({

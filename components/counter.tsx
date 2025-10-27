@@ -4,32 +4,37 @@ import { motion, useInView } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
 export default function Counter() {
-  const [count, setCount] = useState(0);
   const counterRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(counterRef, { once: true, margin: "-100px" });
+
+  // Target: 29 Oct 2025 (set to midnight local time)
+  const targetDate = new Date("2025-10-29T00:00:00");
+
+  const [timeLeft, setTimeLeft] = useState(() => {
+    const diff = targetDate.getTime() - Date.now();
+    return diff > 0 ? diff : 0;
+  });
 
   useEffect(() => {
     if (!isInView) return;
 
-    let start = 0;
-    const end = 2000;
-    const duration = 3000; // 3 seconds
-    const increment = Math.ceil(end / (duration / 16)); // 16ms per frame
+    const tick = () => {
+      const diff = targetDate.getTime() - Date.now();
+      setTimeLeft(diff > 0 ? diff : 0);
+    };
 
-    const timer = setInterval(() => {
-      start += increment;
-      if (start >= end) {
-        setCount(end);
-        clearInterval(timer);
-      } else {
-        setCount(start);
-      }
-    }, 16);
-
-    return () => clearInterval(timer);
+    // update immediately and every second
+    tick();
+    const id = setInterval(tick, 1000);
+    return () => clearInterval(id);
   }, [isInView]);
 
-  const digits = count.toString().padStart(4, "0").split("");
+  const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((timeLeft / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((timeLeft / (1000 * 60)) % 60);
+  const seconds = Math.floor((timeLeft / 1000) % 60);
+
+  const pad = (n: number) => n.toString().padStart(2, "0");
 
   return (
     <div className="py-20 modern-gradient-bg bg-counter relative overflow-hidden">
@@ -44,34 +49,45 @@ export default function Counter() {
         ref={counterRef}
       >
         <motion.h2
-          className="text-3xl md:text-5xl font-dancing gradient-text mb-12 section-title"
+          className="text-3xl md:text-4xl font-dancing gradient-text mb-6 section-title"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          Ngày Yêu Nhau
+          Kỷ niệm 6 năm yêu nhau
         </motion.h2>
 
-        <div className="flex justify-center gap-2 md:gap-4 mb-12">
-          {digits.map((digit, index) => (
-            <motion.div
-              key={index}
-              className="counter-digit"
-              initial={{ y: 50, opacity: 0 }}
-              animate={isInView ? { y: 0, opacity: 1 } : {}}
-              transition={{ delay: index * 0.1, duration: 0.5 }}
-            >
-              {digit}
-            </motion.div>
-          ))}
+        <p className="text-sm text-gray-600 mb-8">(29/10/2019 — 29/10/2025)</p>
+
+        <div className="flex justify-center gap-4 mb-8">
+          <div className="text-center">
+            <div className="text-4xl md:text-5xl font-semibold">{days}</div>
+            <div className="text-sm text-gray-600">Ngày</div>
+          </div>
+
+          <div className="text-center">
+            <div className="text-4xl md:text-5xl font-semibold">{pad(hours)}</div>
+            <div className="text-sm text-gray-600">Giờ</div>
+          </div>
+
+          <div className="text-center">
+            <div className="text-4xl md:text-5xl font-semibold">{pad(minutes)}</div>
+            <div className="text-sm text-gray-600">Phút</div>
+          </div>
+
+          <div className="text-center">
+            <div className="text-4xl md:text-5xl font-semibold">{pad(seconds)}</div>
+            <div className="text-sm text-gray-600">Giây</div>
+          </div>
         </div>
 
         <motion.div
           className="glass-card p-6 max-w-2xl mx-auto"
           initial={{ y: 20, opacity: 0 }}
-          animate={isInView ? { y: 0, opacity: 1 } : {}}
-          transition={{ delay: 0.5, duration: 0.5 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.2, duration: 0.5 }}
+          viewport={{ once: true }}
         >
           <p className="text-lg md:text-xl text-gray-700">
             Mỗi ngày là một kỷ niệm ngọt ngào, mỗi phút giây là dấu ấn của chúng

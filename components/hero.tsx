@@ -10,7 +10,7 @@ export default function Hero() {
     if (!textRef.current) return;
 
     const text =
-      "Như Ý ♥♥♥, hôm nay tròn 2.000 ngày ta bên nhau. Cùng anh ôn lại kỷ niệm nhé!";
+      "Như Ý ♥♥♥, hôm nay tròn 6 năm ta bên nhau. Cùng anh ôn lại kỷ niệm nhé!";
     let i = 0;
     const typing = setInterval(() => {
       if (i < text.length && textRef.current) {

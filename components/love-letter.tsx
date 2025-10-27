@@ -9,12 +9,12 @@ export default function LoveLetter() {
 
   const letterContent = [
     "Gửi Như Ý của anh,",
-    "2000 ngày – gần 5 năm 6 tháng yêu nhau, đó là một hành trình dài mà chúng ta đã cùng nhau trải qua.",
+    "6 năm yêu nhau (29/10/2019 - 29/10/2025) – đó là một hành trình dài mà chúng ta đã cùng nhau trải qua.",
     "Có những lúc vui vẻ, có những lúc buồn bã, nhưng tất cả đều là những kỷ niệm đẹp mà anh sẽ mãi trân trọng.",
     "Từng ngày bên em, với anh, đều là một món quà quý giá mà cuộc đời đã ban tặng.",
     "Cảm ơn em vì đã kiên nhẫn, dịu dàng, và luôn ở bên cạnh anh – dù là những lúc vui vẻ hay giông bão.",
     "Anh, Hoàng Huy, sẽ luôn yêu em bằng tất cả những gì anh có. Hôm nay, ngày mai và cả những năm tháng sau này.",
-    "Chúc mừng 2000 ngày yêu nhau của chúng ta – một hành trình tuyệt đẹp và đầy ý nghĩa.",
+  "Chúc mừng 6 năm yêu nhau của chúng ta – một hành trình tuyệt đẹp và đầy ý nghĩa.",
     "Mãi yêu em,",
     "Hoàng Huy ❤️",
   ];
